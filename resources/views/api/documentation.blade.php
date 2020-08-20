@@ -103,6 +103,21 @@
                     </ul>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Реализовать консольную команду, которая читает два нижеприведенных файла JSON и добавляет/обновляет записи в БД, учесть валидацию данных.</h4>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            php artisan read:products
+                        </li>
+                        <li>
+                           php artisan read:categories
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
