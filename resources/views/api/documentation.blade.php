@@ -5,20 +5,20 @@
         <div class="container mt-5">
             <p>API host <b> http://hh-back.ru/</b></p>
 
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">
-                    <h4>Реализовать CRUD контроллер</h4>
+                    <h5>Реализовать CRUD контроллер</h5>
                 </div>
                 <div class="card-body">
                     <ul>
                         <li>
                             <div>POST <b> /api/products/add </b> - Метод создания товара</div>
                             <ul>
-                                <li>name => required  |  string  |  max:200</li>
-                                <li>description => string  |  max:1000</li>
-                                <li>price => required  |  numeric</li>
-                                <li>quantity => required  |  integer</li>
-                                <li>categories => required  |  json</li>
+                                <li>name => required | string | max:200</li>
+                                <li>description => string | max:1000</li>
+                                <li>price => required | numeric</li>
+                                <li>quantity => required | integer</li>
+                                <li>categories => required | json</li>
                                 <li>external_id => required</li>
                             </ul>
                         </li>
@@ -53,7 +53,7 @@
                                 категории
                             </div>
                             <ul>
-                                <li>category => required  |  integer</li>
+                                <li>category => required | integer</li>
                                 <li>page => integer</li>
                                 <li>
                                     <div>sort => {column},{sort_type}</div>
@@ -66,20 +66,20 @@
                         <li>
                             <div>POST <b> /api/products/getById </b> - Метод получения конкретного товара</div>
                             <ul>
-                                <li>id => required  |  integer</li>
+                                <li>id => required | integer</li>
                             </ul>
                         </li>
                         <li>
                             <div>POST <b> /api/products/delete </b> - Метод удаления товара</div>
                             <ul>
-                                <li>external_id => required  |  integer</li>
+                                <li>external_id => required | integer</li>
                             </ul>
                         </li>
                         <li>
                             <div>GET <b> /api/categories/get </b> - Метод получения списка всех категорий</div>
                         </li>
                         <li>
-                            <div>POST <b> /api/categories/add </b> - Метод добавления категорий </div>
+                            <div>POST <b> /api/categories/add </b> - Метод добавления категорий</div>
                             <ul>
                                 <li> name => required,string,unique:categories,max:200</li>
                                 <li> parent_id => integer</li>
@@ -103,9 +103,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">
-                    <h4>Реализовать консольную команду, которая читает два нижеприведенных файла JSON и добавляет/обновляет записи в БД, учесть валидацию данных.</h4>
+                    <h5>Реализовать консольную команду, которая читает два нижеприведенных файла JSON и
+                        добавляет/обновляет записи в БД, учесть валидацию данных.</h5>
                 </div>
                 <div class="card-body">
                     <ul>
@@ -113,9 +114,51 @@
                             php artisan read:products
                         </li>
                         <li>
-                           php artisan read:categories
+                            php artisan read:categories
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h5>Усложнения</h5>
+                </div>
+                <div class="card-body">
+                    <div>
+                        чтобы получить токен надо отправить в хедерах
+                        <ul>
+                            <li>email => laravel@test.api</li>
+                            <li>password => jYqzAiy4AshMWQU</li>
+                        </ul>
+
+                        <div class="text-info">
+                            если в хедерах включить правильный токен вы получаете доступ к методам добавления /
+                            редактирования / удаления
+                            <ul>
+                                <li>token => {your_token}</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-info">
+                            если отправьте только правильный логин и пароль вы будете авторизованы на базовом уровне (by
+                            basic), и не получаете права к методам добавления / редактирования / удаления
+                        </p>
+                        <p>вы получаете ответ</p>
+                        <pre>
+                            {
+                                "by_token":{
+                                    "error":"Token not found."
+                                },
+                                "by_basic":{
+                                    "api_token": {your_token},
+                                    "success":"Authorized by basic."
+                                }
+                            }
+                        </pre>
+                    </div>
+                    <div>
+                        <p>на гите <a href="https://github.com/HermineB/test-laravel-api" target="_blank">https://github.com/HermineB/test-laravel-api</a></p>
+                    </div>
                 </div>
             </div>
         </div>
