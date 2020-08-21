@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->post('/categories/add', 'CategoriesController@store');
-Route::middleware('auth:api')->post('/categories/update', 'CategoriesController@update');
-Route::middleware('auth:api')->post('/categories/delete', 'CategoriesController@deleteCategory');
-Route::middleware('auth:api')->post('/products/add', 'ProductsController@store');
-Route::middleware('auth:api')->post('/products/delete', 'ProductsController@delete');
-Route::middleware('auth:api')->post('/products/update', 'ProductsController@update');
+Route::middleware('api.token:api')->post('/categories/add', 'CategoriesController@store');
+Route::middleware('AuthKey:api')->post('/categories/update', 'CategoriesController@update');
+Route::middleware('AuthKey:api')->post('/categories/delete', 'CategoriesController@deleteCategory');
+Route::middleware('AuthKey:api')->post('/products/add', 'ProductsController@store');
+Route::middleware('AuthKey:api')->post('/products/delete', 'ProductsController@delete');
+Route::middleware('AuthKey:api')->post('/products/update', 'ProductsController@update');
 Route::get('/categories/get', 'CategoriesController@getCategories');
 Route::post('/products/get', 'ProductsController@getProducts');
 Route::get('/products/get', 'ProductsController@getProducts');
